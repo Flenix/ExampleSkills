@@ -1,47 +1,28 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+/cpw/*
+/ibxm/*
+/net/*
+/paulscode/*
+/fml_at.cfg
+/fml_marker.cfg
+/fmlversion.properties
+/forge_at.cfg
+/forge_logo.png
+/mcp.png
+/mcpmod.info
+/Start.java
+/logs/*
 
-# Folder config file
-Desktop.ini
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+/.gradle
+/.settings
+/bin/
+/build/
+/eclipse
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+/.classpath
+/.project
+*.txt
+*.bat
+*.sh
+*.lzma
+*.log

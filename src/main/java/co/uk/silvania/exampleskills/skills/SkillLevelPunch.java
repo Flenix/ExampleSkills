@@ -41,14 +41,14 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound nbt = new NBTTagCompound();
-		nbt.setInteger(skillName, xp);
+		nbt.setFloat(skillName, xp);
 		compound.setTag(skillId, nbt);
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound compound) {
 		NBTTagCompound nbt = (NBTTagCompound) compound.getTag(skillId);
-		xp = nbt.getInteger(skillName);		
+		xp = nbt.getFloat(skillName);		
 	}
 
 	@Override public void init(Entity entity, World world) {}
@@ -71,7 +71,10 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 			System.out.println("onPunch skillId: " + skillId);
 			SkillLevelPunch skill = (SkillLevelPunch) SkillLevelPunch.get((EntityPlayer) event.source.getEntity(), skillId);
 			skill.addXP(1, (EntityPlayer) event.source.getEntity());
-			System.out.println("It Punched! XP: " + skill.getXP());
+			
+			if (isSkillEquipped((EntityPlayer) event.source.getEntity(), skillId)) {
+				System.out.println("It Punched! XP: " + skill.getXP());
+			}
 		}
 	}
 }

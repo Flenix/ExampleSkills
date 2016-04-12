@@ -22,13 +22,8 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	public static String staticSkillId = "skillPunch";
 	
 	public SkillLevelPunch(EntityPlayer player, String skillID) {
-		skillId = "skillPunch";
-		skillName = "Punch";
+		super(skillID);
 		this.xp = 0;
-		
-		skillIcon = new ResourceLocation(ExampleSkills.MODID, "textures/gui/skills.png");
-		iconX = 30;
-		iconZ = 0;
 		
 		//This requires the Strength skill to be equipped.
 		requiredSkills.add(SkillLevelStrength.staticSkillId);
@@ -41,14 +36,14 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	@Override
 	public void saveNBTData(NBTTagCompound compound) {
 		NBTTagCompound nbt = new NBTTagCompound();
-		nbt.setFloat(skillName, xp);
+		nbt.setFloat(skillId + "xp", xp);
 		compound.setTag(skillId, nbt);
 	}
 
 	@Override
 	public void loadNBTData(NBTTagCompound compound) {
 		NBTTagCompound nbt = (NBTTagCompound) compound.getTag(skillId);
-		xp = nbt.getFloat(skillName);		
+		xp = nbt.getFloat(skillId + "xp");		
 	}
 
 	@Override public void init(Entity entity, World world) {}
@@ -66,7 +61,6 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	
 	@SubscribeEvent
 	public void onPunch(LivingAttackEvent event) {
-		//TODO Check if player has this skill equipped
 		if (event.source.getEntity() instanceof EntityPlayer) {
 			System.out.println("onPunch skillId: " + skillId);
 			SkillLevelPunch skill = (SkillLevelPunch) SkillLevelPunch.get((EntityPlayer) event.source.getEntity(), skillId);
@@ -76,5 +70,47 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 				System.out.println("It Punched! XP: " + skill.getXP());
 			}
 		}
+	}
+
+	@Override
+	public void activateSkill(EntityPlayer arg0, World arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addDescription() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean hasGui() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int iconX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int iconZ() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ResourceLocation skillIcon() {
+		// TODO Auto-generated method stub
+		return new ResourceLocation(ExampleSkills.MODID, "textures/gui/skills.png");
+	}
+
+	@Override
+	public String skillName() {
+		// TODO Auto-generated method stub
+		return "Punch";
 	}
 }

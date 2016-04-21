@@ -73,44 +73,53 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	}
 
 	@Override
-	public void activateSkill(EntityPlayer arg0, World arg1) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void activateSkill(EntityPlayer arg0, World arg1) {}
 
 	@Override
 	public void addDescription() {
-		// TODO Auto-generated method stub
-		
+		description.add(nameFormat() + "\u00A7l" + skillName());
+		description.add("PUNCH THING FACE");
+		description.add("PUNCH FEEL GOOD");
+		description.add("XP GET");
 	}
 
 	@Override
 	public boolean hasGui() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public int iconX() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int iconZ() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public ResourceLocation skillIcon() {
-		// TODO Auto-generated method stub
 		return new ResourceLocation(ExampleSkills.MODID, "textures/gui/skills.png");
 	}
 
 	@Override
 	public String skillName() {
-		// TODO Auto-generated method stub
 		return "Punch";
+	}
+
+	@Override
+	public String shortName() {
+		return "POW";
+	}
+	
+	@Override
+	public boolean skillUnlocked() {
+		return false;
+	}
+	
+	@Override
+	public void addEquipIssues() {
+		equipIssues.add("Skill not yet implemented.");
 	}
 }

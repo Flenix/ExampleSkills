@@ -90,12 +90,6 @@ public class SkillLevelJump extends SkillLevelBase implements IExtendedEntityPro
 			
 			//There is a "forceAddXP(xp)" too - This will add XP even if the skill isn't equipped.
 			//I dunno why you'd ever want to do that, but you can if you really want to.
-			
-			//Just tell the console the player gained XP.
-			//Example of checking if the skill is equipped. Equipped-ness is checked automatically on addXP.
-			if (isSkillEquipped((EntityPlayer) event.entity, skillId)) {
-				System.out.println("It jumped! XP: " + skill.getXP());
-			}
 		}
 	}
 
@@ -114,4 +108,19 @@ public class SkillLevelJump extends SkillLevelBase implements IExtendedEntityPro
 	@Override public ResourceLocation skillIcon() { return new ResourceLocation(ExampleSkills.MODID, "textures/gui/skills.png"); }
 	@Override public String skillName() { return "Jump"; }
 	@Override public String nameFormat() { return "\u00A7b"; }
+
+	@Override
+	public String shortName() {
+		return "JMP";
+	}
+	
+	@Override
+	public boolean skillUnlocked() {
+		return false;
+	}
+	
+	@Override
+	public void addEquipIssues() {
+		equipIssues.add("Skill not yet implemented.");
+	}
 }

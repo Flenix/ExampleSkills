@@ -8,7 +8,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = ExampleSkills.MODID, version = ExampleSkills.VERSION)
+@Mod(modid = ExampleSkills.MODID, version = ExampleSkills.VERSION, dependencies = "required-after:rpgcore")
 public class ExampleSkills {
     public static final String MODID = "exampleskills";
     public static final String VERSION = "1.0";

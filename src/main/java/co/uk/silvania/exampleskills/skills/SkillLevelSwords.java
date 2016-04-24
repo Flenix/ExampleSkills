@@ -90,12 +90,6 @@ public class SkillLevelSwords extends SkillLevelBase implements IExtendedEntityP
 	}
 	
 	@Override
-	public void levelUp(EntityPlayer player) {
-		super.levelUp(player);
-		System.out.println("Level up! " + skillName() + " is now level " + getLevel());
-	}
-	
-	@Override
 	public String shortName() {
 		return "SRD";
 	}

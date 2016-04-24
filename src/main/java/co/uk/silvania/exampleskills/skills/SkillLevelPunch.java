@@ -62,13 +62,8 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	@SubscribeEvent
 	public void onPunch(LivingAttackEvent event) {
 		if (event.source.getEntity() instanceof EntityPlayer) {
-			System.out.println("onPunch skillId: " + skillId);
 			SkillLevelPunch skill = (SkillLevelPunch) SkillLevelPunch.get((EntityPlayer) event.source.getEntity(), skillId);
 			skill.addXP(1, (EntityPlayer) event.source.getEntity());
-			
-			if (isSkillEquipped((EntityPlayer) event.source.getEntity(), skillId)) {
-				System.out.println("It Punched! XP: " + skill.getXP());
-			}
 		}
 	}
 

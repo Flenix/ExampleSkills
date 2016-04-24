@@ -107,4 +107,14 @@ public class SkillLevelPunch extends SkillLevelBase implements IExtendedEntityPr
 	public String shortName() {
 		return "POW";
 	}
+	
+	@Override
+	public boolean skillUnlocked() {
+		return false;
+	}
+
+	@Override
+	public void addEquipIssues() {
+		equipIssues.add("Skill not yet implemented.");
+	}
 }

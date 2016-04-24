@@ -93,4 +93,14 @@ public class SkillLevelSwords extends SkillLevelBase implements IExtendedEntityP
 	public String shortName() {
 		return "SRD";
 	}
+	
+	@Override
+	public boolean skillUnlocked() {
+		return false;
+	}
+
+	@Override
+	public void addEquipIssues() {
+		equipIssues.add("Skill not yet implemented.");
+	}
 }

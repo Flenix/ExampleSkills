@@ -131,4 +131,14 @@ public class SkillLevelJump extends SkillLevelBase implements IExtendedEntityPro
 
 	//The shorthand name for your skill, used in places where space is an issue.
 	@Override public String shortName() { return "JMP"; }
+	
+	@Override
+	public boolean skillUnlocked() {
+		return false;
+	}
+
+	@Override
+	public void addEquipIssues() {
+		equipIssues.add("Skill not yet implemented.");
+	}
 }
